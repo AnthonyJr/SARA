@@ -7,6 +7,10 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
 
+import {QuestionsPage} from '../pages/questions/questions'; 
+
+import {ReportPage} from '../pages/report/report';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -27,7 +31,8 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'My First List', component: ListPage }, 
+      { title: 'Report Assault',     component: ReportPage}
     ];
   }
 

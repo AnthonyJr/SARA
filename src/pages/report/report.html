@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon> 
+    </button>
+    <ion-title>
+      Report Assault
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides pager="true">
+		<ion-slide>
+		      <ion-item>
+            <ion-input placeholder="First Name "></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Last Name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Location of Assault (Description)"></ion-input>
+          </ion-item>
+		</ion-slide>
+
+		<ion-slide>
+            <ion-item>
+              <ion-label>Do you want to Press Charges?</ion-label>
+              <ion-toggle></ion-toggle>
+            </ion-item>
+            <ion-item>
+              <ion-label>Do you want evidence collected?</ion-label>
+              <ion-toggle></ion-toggle>
+            </ion-item>
+            <ion-item>
+              <ion-label>Do you need medical attention?</ion-label>
+              <ion-toggle></ion-toggle>
+            </ion-item>
+            <ion-item>
+              <ion-label>Would you like to speak to a counselor?</ion-label>
+              <ion-toggle></ion-toggle>
+            </ion-item>
+            <ion-item>
+              <ion-label>Do you need to be relocated? </ion-label>
+              <!-- Send email to womens shelter -->
+              <ion-toggle></ion-toggle>
+            </ion-item>
+            <ion-item>
+              <ion-label>Do you want to Press Charges?</ion-label>
+              <ion-toggle></ion-toggle>
+            </ion-item>
+		</ion-slide>
+    <ion-slide>
+      <ion-item>
+      <ion-textarea rows = "5"placeholder="Would you like to add any more information? (optional) (For example, if you want to make any notes to yourself about the event. This will be forwarded to an email but not forwarded to authorities unless you later request it.)  "></ion-textarea>
+      </ion-item>
+    </ion-slide>
+    <ion-slide>
+      <button ion-button full>Submit</button>
+    </ion-slide>
+	</ion-slides>
+</ion-content>
