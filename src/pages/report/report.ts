@@ -17,6 +17,13 @@ export class ReportPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReportPage');
+
   }
+
+  myFunction() {
+  	this.alertEvent ? this.alertEvent = false: true;
+  	console.log(this.alertEvent);
+  }
+
 
 }

@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-navbar>
     <button ion-button icon-only menuToggle>
@@ -24,9 +25,9 @@
 		</ion-slide>
 
 		<ion-slide>
-            <ion-item>
+            <ion-item id="charges">
               <ion-label>Do you want to Press Charges?</ion-label>
-              <ion-toggle></ion-toggle>
+              <ion-toggle [(ngModel)]="alertEvent" (ionChange)="myFunction()"></ion-toggle>
             </ion-item>
             <ion-item>
               <ion-label>Do you want evidence collected?</ion-label>
@@ -45,14 +46,17 @@
               <!-- Send email to womens shelter -->
               <ion-toggle></ion-toggle>
             </ion-item>
-            <ion-item>
-              <ion-label>Do you want to Press Charges?</ion-label>
-              <ion-toggle></ion-toggle>
+            <ion-item id="email">
+              <ion-input placeholder="Email"></ion-input>
             </ion-item>
+            <ion-item id="phone" style="display:none">
+              <ion-input placeholder="Phone Number"></ion-input>
+            </ion-item>
+
 		</ion-slide>
     <ion-slide>
       <ion-item>
-      <ion-textarea rows = "5"placeholder="Would you like to add any more information? (optional) (For example, if you want to make any notes to yourself about the event. This will be forwarded to an email but not forwarded to authorities unless you later request it.)  "></ion-textarea>
+      <ion-textarea rows = "6"placeholder="Would you like to add any more information? (optional) (For example, if you want to make any notes to yourself about the event. This will be forwarded to an email but not forwarded to authorities unless you later request it.)  "></ion-textarea>
       </ion-item>
     </ion-slide>
     <ion-slide>
@@ -60,3 +64,5 @@
     </ion-slide>
 	</ion-slides>
 </ion-content>
+
+
