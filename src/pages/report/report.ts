@@ -13,6 +13,8 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ReportPage {
 
+  public isToggled: boolean;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
@@ -20,10 +22,11 @@ export class ReportPage {
 
   }
 
-  myFunction() {
-  	this.alertEvent ? this.alertEvent = false: true;
-  	console.log(this.alertEvent);
+  public Show(){
+  	console.log("toggled");
+
   }
+
 
 
 }

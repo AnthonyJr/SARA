@@ -27,7 +27,7 @@
 		<ion-slide>
             <ion-item id="charges">
               <ion-label>Do you want to Press Charges?</ion-label>
-              <ion-toggle [(ngModel)]="alertEvent" (ionChange)="myFunction()"></ion-toggle>
+              <ion-toggle [(ngModel)]="isToggled" (ionChange)="Show()"></ion-toggle>
             </ion-item>
             <ion-item>
               <ion-label>Do you want evidence collected?</ion-label>
