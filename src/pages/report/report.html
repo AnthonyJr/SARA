@@ -27,31 +27,34 @@
 		<ion-slide>
             <ion-item id="charges">
               <ion-label>Do you want to Press Charges?</ion-label>
-              <ion-toggle [(ngModel)]="isToggled" (ionChange)="Show()"></ion-toggle>
+              <ion-toggle [(ngModel)]="isToggledCharges" (ionChange)="Show()"></ion-toggle>
             </ion-item>
             <ion-item>
               <ion-label>Do you want evidence collected?</ion-label>
-              <ion-toggle></ion-toggle>
+              <ion-toggle [(ngModel)]="isToggledEvidence" (ionChange)="Show()"></ion-toggle>
             </ion-item>
             <ion-item>
               <ion-label>Do you need medical attention?</ion-label>
-              <ion-toggle></ion-toggle>
+              <ion-toggle [(ngModel)]="isToggledMedical" (ionChange)="Show()"></ion-toggle>
             </ion-item>
             <ion-item>
-              <ion-label>Would you like to speak to a counselor?</ion-label>
-              <ion-toggle></ion-toggle>
+              <ion-label>Do you need Counseling?</ion-label>
+              <ion-toggle [(ngModel)]="isToggledCounseling" (ionChange)="Show()"></ion-toggle>
             </ion-item>
             <ion-item>
               <ion-label>Do you need to be relocated? </ion-label>
               <!-- Send email to womens shelter -->
-              <ion-toggle></ion-toggle>
+              <ion-toggle [(ngModel)]="isToggledRelocated" (ionChange)="Show()"></ion-toggle>
             </ion-item>
-            <ion-item id="email">
-              <ion-input placeholder="Email"></ion-input>
+            <ion-item id="email" style="visibility:hidden">
+              <ion-input  placeholder="Email" ></ion-input>
             </ion-item>
-            <ion-item id="phone" style="display:none">
+
+            <ion-item id="phone" style="visibility:hidden">
               <ion-input placeholder="Phone Number"></ion-input>
             </ion-item>
+
+
 
 		</ion-slide>
     <ion-slide>

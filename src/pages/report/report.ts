@@ -23,7 +23,17 @@ export class ReportPage {
   }
 
   public Show(){
-  	console.log("toggled");
+  	console.log("Toggle is working.");
+	var x = document.getElementById('phone'); 
+	var y = document.getElementById('email');
+	if (x.style.visibility === 'hidden'){
+		x.style.visibility = 'visible'; 
+		y.style.visibility = 'visible';
+	}  	else {
+		x.style.visibility = 'hidden'; 
+		y.style.visibility = 'hidden'; 
+	}
+
 
   }
 
