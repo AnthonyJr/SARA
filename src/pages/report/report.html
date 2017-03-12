@@ -13,44 +13,44 @@
 <ion-content padding style="background-color: #FFFACD">
   <ion-slides pager="true">
 		<ion-slide>
-		      <ion-item>
-            <ion-input placeholder="First Name "></ion-input>
+		      <ion-item style="background-color: #FFFACD">
+            <ion-input placeholder="First Name " name="first_name"></ion-input>
           </ion-item>
-          <ion-item>
-            <ion-input placeholder="Last Name"></ion-input>
+          <ion-item style="background-color: #FFFACD">
+            <ion-input placeholder="Last Name" name="last_name"></ion-input>
           </ion-item>
-          <ion-item>
-            <ion-input placeholder="Location of Assault (Description)"></ion-input>
+          <ion-item style="background-color: #FFFACD">
+            <ion-input placeholder="Location of Assault (Description)" name="location"></ion-input>
           </ion-item>
 		</ion-slide>
 
 		<ion-slide>
-            <ion-item id="charges">
+            <ion-item id="charges" style="background-color: #FFFACD" >
               <ion-label>Do you want to Press Charges?</ion-label>
-              <ion-toggle [(ngModel)]="isToggledCharges" (ionChange)="Show()"></ion-toggle>
+              <ion-toggle [(ngModel)]="isToggledCharges" (ionChange)="Show()" name="charges"></ion-toggle>
             </ion-item>
-            <ion-item>
+            <ion-item style="background-color: #FFFACD">
               <ion-label>Do you want evidence collected?</ion-label>
-              <ion-toggle [(ngModel)]="isToggledEvidence" (ionChange)="Show()"></ion-toggle>
+              <ion-toggle  [(ngModel)]="isToggledEvidence" checked="true" (ionChange)="Show()" color="primary"></ion-toggle>
             </ion-item>
-            <ion-item>
+             <ion-item style="background-color: #FFFACD" name="medical">
               <ion-label>Do you need medical attention?</ion-label>
               <ion-toggle [(ngModel)]="isToggledMedical" (ionChange)="Show()"></ion-toggle>
             </ion-item>
-            <ion-item>
+            <ion-item style="background-color: #FFFACD">
               <ion-label>Do you need Counseling?</ion-label>
               <ion-toggle [(ngModel)]="isToggledCounseling" (ionChange)="Show()"></ion-toggle>
             </ion-item>
-            <ion-item>
+            <ion-item style="background-color: #FFFACD">
               <ion-label>Do you need to be relocated? </ion-label>
               <!-- Send email to womens shelter -->
               <ion-toggle [(ngModel)]="isToggledRelocated" (ionChange)="Show()"></ion-toggle>
             </ion-item>
-            <ion-item id="email" style="visibility:hidden">
+            <ion-item id="email"  style="background-color: #FFFACD;visibility: hidden;">
               <ion-input  placeholder="Email" ></ion-input>
             </ion-item>
 
-            <ion-item id="phone" style="visibility:hidden">
+            <ion-item id="phone"  style="background-color: #FFFACD;visibility: hidden;">
               <ion-input placeholder="Phone Number"></ion-input>
             </ion-item>
 
@@ -58,7 +58,7 @@
 
 		</ion-slide>
     <ion-slide>
-      <ion-item>
+      <ion-item style="background-color: #FFFACD">
       <ion-textarea rows = "6"placeholder="Would you like to add any more information? (optional) (For example, if you want to make any notes to yourself about the event. This will be forwarded to an email but not forwarded to authorities unless you later request it.)  "></ion-textarea>
       </ion-item>
     </ion-slide>

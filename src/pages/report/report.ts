@@ -24,15 +24,29 @@ export class ReportPage {
 
   public Show(){
   	console.log("Toggle is working.");
-	var x = document.getElementById('phone'); 
-	var y = document.getElementById('email');
-	if (x.style.visibility === 'hidden'){
-		x.style.visibility = 'visible'; 
-		y.style.visibility = 'visible';
+	var phone = document.getElementById('phone'); 
+	var email = document.getElementById('email');
+	if (phone.style.visibility === 'hidden'){
+		phone.style.visibility = 'visible'; 
+		email.style.visibility = 'visible';
 	}  	else {
-		x.style.visibility = 'hidden'; 
-		y.style.visibility = 'hidden'; 
+		phone.style.visibility = 'hidden'; 
+		email.style.visibility = 'hidden'; 
 	}
+
+  var first_name = (<HTMLInputElement>document.getElementsByName("first_name")[1]).value;
+  var last_name = (<HTMLInputElement>document.getElementsByName("last_name")[1]).value;
+  var location = (<HTMLInputElement>document.getElementsByName("location")[1]).value;
+
+  //var medical = (<HTMLInputElement>document.getElementsByName("medical")[1]).value; */
+
+
+
+
+  //console.log(first_name);
+  //console.log(last_name); 
+  //console.log(location); 
+
 
 
   }

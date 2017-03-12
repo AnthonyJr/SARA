@@ -35,6 +35,20 @@
                         {
                             "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EmailComposer\"><param name=\"ios-package\" value=\"APPEmailComposer\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "LSApplicationQueriesSchemes": [
+                        {
+                            "xml": "<array><string>mailto</string></array>",
+                            "count": 1
                         }
                     ]
                 }
@@ -58,6 +72,9 @@
             "PACKAGE_NAME": "io.ionic.starter"
         },
         "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-email": {
             "PACKAGE_NAME": "io.ionic.starter"
         }
     },
@@ -111,6 +128,15 @@
                 "cordova.plugins.Keyboard"
             ],
             "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-email/www/email_composer.js",
+            "id": "cordova-plugin-email.EmailComposer",
+            "pluginId": "cordova-plugin-email",
+            "clobbers": [
+                "cordova.plugins.email",
+                "plugin.email"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -119,6 +145,7 @@
         "cordova-plugin-splashscreen": "4.0.1",
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-whitelist": "1.3.1",
-        "ionic-plugin-keyboard": "2.2.1"
+        "ionic-plugin-keyboard": "2.2.1",
+        "cordova-plugin-email": "1.2.6"
     }
 }
