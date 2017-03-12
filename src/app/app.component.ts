@@ -32,7 +32,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage}, 
       { title: 'Login', component: LoginPage},
-      { title: 'Report Assault',     component: ReportPage}, 
+      { title: 'Report Assault', component: ReportPage}, 
 
     ];
   }
