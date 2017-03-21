@@ -13,9 +13,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ReportPage {
 
-  public isToggled: boolean;
+  toggleCharged: boolean = false; 
+  toggleEvidence: boolean = false; 
+  toggleMedical: boolean = false; 
+  toggleCounseling: boolean = false; 
+  toggleRelocation: boolean = false; 
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReportPage');
@@ -23,32 +29,146 @@ export class ReportPage {
   }
 
   public Show(){
-  	console.log("Toggle is working.");
+
 	var phone = document.getElementById('phone'); 
 	var email = document.getElementById('email');
-	if (phone.style.visibility === 'hidden'){
-		phone.style.visibility = 'visible'; 
-		email.style.visibility = 'visible';
-	}  	else {
-		phone.style.visibility = 'hidden'; 
-		email.style.visibility = 'hidden'; 
-	}
 
-  var first_name = (<HTMLInputElement>document.getElementsByName("first_name")[1]).value;
-  var last_name = (<HTMLInputElement>document.getElementsByName("last_name")[1]).value;
-  var location = (<HTMLInputElement>document.getElementsByName("location")[1]).value;
-
-  //var medical = (<HTMLInputElement>document.getElementsByName("medical")[1]).value; */
+  phone.style.visibility = 'visible'; 
+  email.style.visibility = 'visible';
 
 
 
 
-  //console.log(first_name);
-  //console.log(last_name); 
-  //console.log(location); 
+  //var medical = (<HTMLInputElement>document.getElementsByName("medical")[1]).value; *
+  }
+
+  public Hide(){
+    var phone = document.getElementById('phone'); 
+    var email = document.getElementById('email');
+
+    phone.style.visibility = 'hidden'; 
+    email.style.visibility = 'hidden';   
+  }
+
+  public ToggleCharged(){
+    console.log("ToggleCharged Loading...."); 
+    if(this.toggleCharged == false) {
+      this.toggleCharged = true;
+      console.log(this.toggleCharged); 
+      if(this.toggleCharged == true || this.toggleCounseling == true || this.toggleEvidence == true || this.toggleMedical == true || this.toggleRelocation == true) {
+        this.Show(); 
+      }
+    } else {
+      this.toggleCharged = false; 
+      console.log(this.toggleCharged);
+      if(this.toggleCharged == false && this.toggleCounseling == false && this.toggleEvidence == false && this.toggleMedical == false && this.toggleRelocation == false) {
+        this.Hide();
+      }
+    }
+
+  }
+
+  public ToggleEvidence(){
+    console.log("ToggleEvidence Loading...."); 
+    if(this.toggleEvidence == false) {
+      this.toggleEvidence = true;
+      console.log(this.toggleEvidence); 
+      if(this.toggleCharged == true || this.toggleCounseling == true || this.toggleEvidence == true || this.toggleMedical == true || this.toggleRelocation == true) {
+        this.Show(); 
+      }
+    } else {
+      this.toggleEvidence = false; 
+      console.log(this.toggleEvidence);
+      if(this.toggleCharged == false && this.toggleCounseling == false && this.toggleEvidence == false && this.toggleMedical == false && this.toggleRelocation == false) {
+        this.Hide();
+      }
+    }
+
+  }
+
+  public ToggleMedical(){
+    console.log("ToggleMedical Loading...."); 
+    if(this.toggleMedical == false) {
+      this.toggleMedical = true;
+      console.log(this.toggleMedical); 
+      if(this.toggleCharged == true || this.toggleCounseling == true || this.toggleEvidence == true || this.toggleMedical == true || this.toggleRelocation == true) {
+        this.Show(); 
+      }
+    } else {
+      this.toggleMedical = false; 
+      console.log(this.toggleMedical);
+      if(this.toggleCharged == false && this.toggleCounseling == false && this.toggleEvidence == false && this.toggleMedical == false && this.toggleRelocation == false) {
+        this.Hide();
+      }
+    }
+
+  }
+
+  public ToggleCounsel(){
+    console.log("ToggleCounsel Loading...."); 
+    if(this.toggleCounseling == false) {
+      this.toggleCounseling = true;
+      console.log(this.toggleCounseling); 
+      if(this.toggleCharged == true || this.toggleCounseling == true || this.toggleEvidence == true || this.toggleMedical == true || this.toggleRelocation == true) {
+        this.Show(); 
+      }
+    } else {
+      this.toggleCounseling = false; 
+      console.log(this.toggleCounseling);
+      if(this.toggleCharged == false && this.toggleCounseling == false && this.toggleEvidence == false && this.toggleMedical == false && this.toggleRelocation == false) {
+        this.Hide();
+      }
+    }
+
+  }
+
+  public ToggleRelocate(){
+    console.log("ToggleRelocate Loading...."); 
+    if(this.toggleRelocation == false) {
+      this.toggleRelocation = true;
+      console.log(this.toggleRelocation); 
+      if(this.toggleCharged == true || this.toggleCounseling == true || this.toggleEvidence == true || this.toggleMedical == true || this.toggleRelocation == true) {
+        this.Show(); 
+      }
+    } else {
+      this.toggleRelocation = false; 
+      console.log(this.toggleRelocation);
+      if(this.toggleCharged == false && this.toggleCounseling == false && this.toggleEvidence == false && this.toggleMedical == false && this.toggleRelocation == false) {
+        this.Hide();
+      }
+    }
+
+  }
 
 
+  public SubmitForm(){
+    var first_name = (<HTMLInputElement>document.getElementsByName("first_name")[1]).value;
+    var last_name = (<HTMLInputElement>document.getElementsByName("last_name")[1]).value;
+    var location = (<HTMLInputElement>document.getElementsByName("location")[1]).value;
+    var misc = (<HTMLInputElement>document.getElementsByName("misc")[1]).value;
+    var email = (<HTMLInputElement>document.getElementsByName("email")[1]).value;
+    var phone = (<HTMLInputElement>document.getElementsByName("phone")[1]).value;
 
+
+    console.log("first name: " + first_name);
+    console.log("last name: " +last_name); 
+    console.log("Location: " + location); 
+    console.log("Other: " + misc); 
+    console.log("Email: " +email); 
+    console.log("Phone: " + phone);
+    console.log("Do you want evidence Collected? " + this.YorN(this.toggleEvidence)); 
+    console.log("Do you want Counseling? " + this.toggleCounseling); 
+    console.log("Do you require Medical Attention " + this.toggleMedical); 
+    console.log("Do you want to press Charges? " +this.toggleCharged);
+    console.log("Do you need Relocation? " + this.toggleRelocation); 
+  }
+
+  public YorN(x: boolean){
+    if(x == true) {
+      return "yes"; 
+    } else {
+      return "no";
+    }
   }
 
 
