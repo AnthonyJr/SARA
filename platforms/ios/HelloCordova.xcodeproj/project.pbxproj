@@ -24,6 +24,9 @@
 		C05F970D4FE34E429EA9BFFF /* APPEmailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B0DE47F71463EBD8B5E90 /* APPEmailComposer.m */; };
 		6F3C5FE2A2B545B8827EF4DD /* APPEmailComposerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C2A1AF843A48A4BDB13A31 /* APPEmailComposerImpl.m */; };
 		978F0AA6CA45447DB56DA91F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D1DDD45F115497480017E01 /* MessageUI.framework */; };
+		C23A6B4CA1784CA6AD2768F3 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FA90ACED3046728B593C21 /* NSString+URLEncoding.m */; };
+		49AFAE35F08E4167BE70F47F /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 935F9A06AEED4A6DB02DCC8E /* SocialSharing.m */; };
+		8FFB88D0041042B2925F88B9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19AC3687C49E4410B76103FC /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,11 @@
 		0E969A0BB8E140E290A31C70 /* APPEmailComposer.h */ = {isa = PBXFileReference; name = "APPEmailComposer.h"; path = "cordova-plugin-email/APPEmailComposer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		AA5887C3F08241968156464E /* APPEmailComposerImpl.h */ = {isa = PBXFileReference; name = "APPEmailComposerImpl.h"; path = "cordova-plugin-email/APPEmailComposerImpl.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		6D1DDD45F115497480017E01 /* MessageUI.framework */ = {isa = PBXFileReference; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		66FA90ACED3046728B593C21 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; name = "NSString+URLEncoding.m"; path = "cordova-plugin-x-socialsharing/NSString+URLEncoding.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		935F9A06AEED4A6DB02DCC8E /* SocialSharing.m */ = {isa = PBXFileReference; name = "SocialSharing.m"; path = "cordova-plugin-x-socialsharing/SocialSharing.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		9C35B32C3B684051831E1EEF /* NSString+URLEncoding.h */ = {isa = PBXFileReference; name = "NSString+URLEncoding.h"; path = "cordova-plugin-x-socialsharing/NSString+URLEncoding.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		649201244C234E4AA69D831F /* SocialSharing.h */ = {isa = PBXFileReference; name = "SocialSharing.h"; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		19AC3687C49E4410B76103FC /* Social.framework */ = {isa = PBXFileReference; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				978F0AA6CA45447DB56DA91F /* MessageUI.framework in Frameworks */,
+				8FFB88D0041042B2925F88B9 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				6D1DDD45F115497480017E01 /* MessageUI.framework */,
+				19AC3687C49E4410B76103FC /* Social.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -200,6 +210,10 @@
 				B6C2A1AF843A48A4BDB13A31 /* APPEmailComposerImpl.m */,
 				0E969A0BB8E140E290A31C70 /* APPEmailComposer.h */,
 				AA5887C3F08241968156464E /* APPEmailComposerImpl.h */,
+				66FA90ACED3046728B593C21 /* NSString+URLEncoding.m */,
+				935F9A06AEED4A6DB02DCC8E /* SocialSharing.m */,
+				9C35B32C3B684051831E1EEF /* NSString+URLEncoding.h */,
+				649201244C234E4AA69D831F /* SocialSharing.h */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -322,6 +336,8 @@
 				8E414C090C7648299BA6B2A9 /* IonicKeyboard.m in Sources */,
 				C05F970D4FE34E429EA9BFFF /* APPEmailComposer.m in Sources */,
 				6F3C5FE2A2B545B8827EF4DD /* APPEmailComposerImpl.m in Sources */,
+				C23A6B4CA1784CA6AD2768F3 /* NSString+URLEncoding.m in Sources */,
+				49AFAE35F08E4167BE70F47F /* SocialSharing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

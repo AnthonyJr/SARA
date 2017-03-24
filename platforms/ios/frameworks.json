@@ -1,3 +1,4 @@
 {
-    "MessageUI.framework": 1
+    "MessageUI.framework": 2,
+    "Social.framework": 1
 }

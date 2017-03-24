@@ -57,6 +57,14 @@ module.exports = [
             "cordova.plugins.email",
             "plugin.email"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "id": "cordova-plugin-x-socialsharing.SocialSharing",
+        "pluginId": "cordova-plugin-x-socialsharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -68,7 +76,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
     "ionic-plugin-keyboard": "2.2.1",
-    "cordova-plugin-email": "1.2.6"
+    "cordova-plugin-email": "1.2.6",
+    "cordova-plugin-x-socialsharing": "5.1.6"
 }
 // BOTTOM OF METADATA
 });

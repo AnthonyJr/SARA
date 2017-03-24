@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {SocialSharing } from '@ionic-native/social-sharing'; 
+
+
+
 
 /*
   Generated class for the Report page.
@@ -9,9 +13,12 @@ import { NavController, NavParams } from 'ionic-angular';
 */
 @Component({
   selector: 'page-report',
-  templateUrl: 'report.html'
+  templateUrl: 'report.html',
+  providers: [SocialSharing]
 })
 export class ReportPage {
+
+
 
   toggleCharged: boolean = false; 
   toggleEvidence: boolean = false; 
@@ -19,7 +26,7 @@ export class ReportPage {
   toggleCounseling: boolean = false; 
   toggleRelocation: boolean = false; 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing) {
 
   }
 
@@ -127,6 +134,9 @@ export class ReportPage {
     if(this.toggleRelocation == false) {
       this.toggleRelocation = true;
       console.log(this.toggleRelocation); 
+      // create alert to call womens shelter
+      //phone number: 859.259.1974
+      // email: 
       if(this.toggleCharged == true || this.toggleCounseling == true || this.toggleEvidence == true || this.toggleMedical == true || this.toggleRelocation == true) {
         this.Show(); 
       }
@@ -154,13 +164,30 @@ export class ReportPage {
     console.log("last name: " +last_name); 
     console.log("Location: " + location); 
     console.log("Other: " + misc); 
-    console.log("Email: " +email); 
+    console.log("Email: " + email); 
     console.log("Phone: " + phone);
     console.log("Do you want evidence Collected? " + this.YorN(this.toggleEvidence)); 
-    console.log("Do you want Counseling? " + this.toggleCounseling); 
-    console.log("Do you require Medical Attention " + this.toggleMedical); 
-    console.log("Do you want to press Charges? " +this.toggleCharged);
-    console.log("Do you need Relocation? " + this.toggleRelocation); 
+    console.log("Do you want Counseling? " + this.YorN(this.toggleCounseling)); 
+    console.log("Do you require Medical Attention " + this.YorN(this.toggleMedical)); 
+    console.log("Do you want to press Charges? " +this.YorN(this.toggleCharged));
+    console.log("Do you need Relocation? " + this.YorN(this.toggleRelocation)); 
+
+    let form_object: [string, string, string, 
+    string, string, string, 
+    boolean, boolean, boolean,
+     boolean, boolean]; 
+
+    form_object = [first_name, last_name, location, 
+    misc, email, phone, this.toggleCharged, 
+    this.toggleEvidence, this.toggleMedical, 
+    this.toggleCounseling, this.toggleRelocation];
+
+    // http://10.20.36.167:3030/SARAEmail
+
+
+
+    
+
   }
 
   public YorN(x: boolean){
