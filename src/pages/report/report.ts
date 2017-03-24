@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {SocialSharing } from '@ionic-native/social-sharing'; 
+import  { HTTP } from '@ionic-native/http';
+
 
 
 
@@ -14,7 +16,7 @@ import {SocialSharing } from '@ionic-native/social-sharing';
 @Component({
   selector: 'page-report',
   templateUrl: 'report.html',
-  providers: [SocialSharing]
+  providers: [SocialSharing, HTTP]
 })
 export class ReportPage {
 
@@ -26,7 +28,7 @@ export class ReportPage {
   toggleCounseling: boolean = false; 
   toggleRelocation: boolean = false; 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing,private http: HTTP) {
 
   }
 
@@ -182,7 +184,14 @@ export class ReportPage {
     this.toggleEvidence, this.toggleMedical, 
     this.toggleCounseling, this.toggleRelocation];
 
-    // http://10.20.36.167:3030/SARAEmail
+
+    this.http.post('http://10.20.36.167:3030/SARAEmail', form_object, {}).catch(error => {
+
+    console.log(error.status);
+    console.log(error.error); // error message as string
+    console.log(error.headers);
+
+  }); 
 
 
 

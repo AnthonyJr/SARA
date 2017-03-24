@@ -9,7 +9,20 @@
     "installed_plugins": {
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.ionicframework.sara306432"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.ionicframework.sara306432"
+        },
+        "cordova-plugin-http": {
+            "PACKAGE_NAME": "com.ionicframework.sara306432"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.sara306432"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.sara306432"
+        }
+    }
 }

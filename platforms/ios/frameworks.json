@@ -1,4 +1,6 @@
 {
     "MessageUI.framework": 2,
-    "Social.framework": 1
+    "Social.framework": 1,
+    "Security.framework": 1,
+    "SystemConfiguration.framework": 1
 }
