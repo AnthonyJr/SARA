@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {SocialSharing } from '@ionic-native/social-sharing'; 
-import  { HTTP } from '@ionic-native/http';
-
+import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/map'; 
+import {Http, Headers} from '@angular/http'; 
 
 
 
@@ -16,7 +17,6 @@ import  { HTTP } from '@ionic-native/http';
 @Component({
   selector: 'page-report',
   templateUrl: 'report.html',
-  providers: [SocialSharing, HTTP]
 })
 export class ReportPage {
 
@@ -28,7 +28,7 @@ export class ReportPage {
   toggleCounseling: boolean = false; 
   toggleRelocation: boolean = false; 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing,private http: HTTP) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
 
   }
 
@@ -184,14 +184,33 @@ export class ReportPage {
     this.toggleEvidence, this.toggleMedical, 
     this.toggleCounseling, this.toggleRelocation];
 
+    var url = "http://bloodroot.cs.uky.edu:3030/SARAEmail"; 
+    var method = "POST"; 
+    var async = true; 
 
-    this.http.post('http://10.20.36.167:3030/SARAEmail', form_object, {}).catch(error => {
+    let headers = new Headers(); 
+    headers.append('Content-Type', 'applciation/json'); 
 
-    console.log(error.status);
-    console.log(error.error); // error message as string
-    console.log(error.headers);
+    let body = {
+      message: "Do you hear me"
+    }; 
 
-  }); 
+    this.http.post(url, body , {headers: headers})
+    .map(res => res.json())
+    .subscribe( data => {
+      console.log(data);
+    });
+
+
+
+
+
+
+
+
+    
+
+
 
 
 

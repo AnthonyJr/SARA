@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/SnowMan/Desktop/SARA/platforms/android/build/intermediates/res/merged/debug/xml/config.xml",
+        "source": "/Users/SnowMan/Desktop/SARA/platforms/android/res/xml/config.xml"
+    },
+    {
+        "merged": "/Users/SnowMan/Desktop/SARA/platforms/android/build/intermediates/res/merged/debug/xml/sharing_paths.xml",
+        "source": "/Users/SnowMan/Desktop/SARA/platforms/android/res/xml/sharing_paths.xml"
+    }
+]

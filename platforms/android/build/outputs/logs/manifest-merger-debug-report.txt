@@ -1,0 +1,104 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:2:1-18:12
+	package
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:2:98-137
+		INJECTED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml
+		INJECTED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:2:70-97
+		INJECTED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml
+		INJECTED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml
+	android:hardwareAccelerated
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:2:11-45
+	android:versionCode
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:2:46-69
+		INJECTED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml
+		INJECTED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:2:138-196
+supports-screens
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:3:5-191
+	android:largeScreens
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:3:49-76
+	android:smallScreens
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:3:132-159
+	android:normalScreens
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:3:77-105
+	android:xlargeScreens
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:3:160-188
+	android:resizeable
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:3:106-131
+	android:anyDensity
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:3:23-48
+uses-permission#android.permission.INTERNET
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:4:22-64
+application
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:5:5-15:19
+MERGED from [com.android.support:support-v4:24.1.1] /Users/SnowMan/Desktop/SARA/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:5:81-113
+	android:supportsRtl
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:5:114-140
+	android:hardwareAccelerated
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:5:18-52
+	android:icon
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:5:53-80
+activity#com.ionicframework.sara306432.MainActivity
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:6:9-11:20
+	android:label
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:6:97-134
+	android:launchMode
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:6:135-165
+	android:windowSoftInputMode
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:6:257-299
+	android:configChanges
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:6:19-96
+	android:theme
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:6:194-256
+	android:name
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:6:166-193
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:7:13-10:29
+	android:label
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:7:28-65
+action#android.intent.action.MAIN
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:8:17-69
+	android:name
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:8:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:9:17-77
+	android:name
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:9:27-74
+provider#nl.xservices.plugins.FileProvider
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:12:9-14:20
+	android:authorities
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:12:19-87
+	android:grantUriPermissions
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:12:113-147
+	android:exported
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:12:88-112
+	android:name
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:12:148-196
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:13:13-115
+	android:resource
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:13:75-112
+	android:name
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:13:24-74
+uses-sdk
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:16:5-74
+MERGED from [com.android.support:support-v4:24.1.1] /Users/SnowMan/Desktop/SARA/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:21:5-23:54
+MERGED from [android:CordovaLib:unspecified:debug] /Users/SnowMan/Desktop/SARA/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/AndroidManifest.xml:25:5-44
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:24.1.1] /Users/SnowMan/Desktop/SARA/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:16:42-71
+	android:minSdkVersion
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:16:15-41
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:17:5-81
+	android:name
+		ADDED from /Users/SnowMan/Desktop/SARA/platforms/android/AndroidManifest.xml:17:22-78
