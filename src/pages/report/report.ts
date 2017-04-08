@@ -162,17 +162,17 @@ export class ReportPage {
     var phone = (<HTMLInputElement>document.getElementsByName("phone")[1]).value;
 
 
-    console.log("first name: " + first_name);
-    console.log("last name: " +last_name); 
-    console.log("Location: " + location); 
-    console.log("Other: " + misc); 
-    console.log("Email: " + email); 
-    console.log("Phone: " + phone);
-    console.log("Do you want evidence Collected? " + this.YorN(this.toggleEvidence)); 
-    console.log("Do you want Counseling? " + this.YorN(this.toggleCounseling)); 
-    console.log("Do you require Medical Attention " + this.YorN(this.toggleMedical)); 
-    console.log("Do you want to press Charges? " +this.YorN(this.toggleCharged));
-    console.log("Do you need Relocation? " + this.YorN(this.toggleRelocation)); 
+    // console.log("first name: " + first_name);
+    // console.log("last name: " +last_name); 
+    // console.log("Location: " + location); 
+    // console.log("Other: " + misc); 
+    // console.log("Email: " + email); 
+    // console.log("Phone: " + phone);
+    // console.log("Do you want evidence Collected? " + this.YorN(this.toggleEvidence)); 
+    // console.log("Do you want Counseling? " + this.YorN(this.toggleCounseling)); 
+    // console.log("Do you require Medical Attention " + this.YorN(this.toggleMedical)); 
+    // console.log("Do you want to press Charges? " +this.YorN(this.toggleCharged));
+    // console.log("Do you need Relocation? " + this.YorN(this.toggleRelocation)); 
 
     let form_object: [string, string, string, 
     string, string, string, 
@@ -184,18 +184,17 @@ export class ReportPage {
     this.toggleEvidence, this.toggleMedical, 
     this.toggleCounseling, this.toggleRelocation];
 
-    var url = "http://bloodroot.cs.uky.edu:3030/SARAEmail"; 
+    var url = "http://localhost:3030/SARAEmail"; 
     var method = "POST"; 
     var async = true; 
 
     let headers = new Headers(); 
-    headers.append('Content-Type', 'applciation/json'); 
+    headers.append('Content-Type', 'application/json'); 
 
     let body = {
       message: "Do you hear me"
     }; 
-
-    this.http.post(url, body , {headers: headers})
+    this.http.post(url, form_object , {headers: headers})
     .map(res => res.json())
     .subscribe( data => {
       console.log(data);
