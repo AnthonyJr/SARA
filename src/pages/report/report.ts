@@ -185,34 +185,19 @@ export class ReportPage {
     this.toggleCounseling, this.toggleRelocation];
 
     var url = "http://localhost:3030/SARAEmail"; 
+    // var url = "http://bloodroot.cs.uky.edu:3030/SARAEmail"; 
+
     var method = "POST"; 
     var async = true; 
 
     let headers = new Headers(); 
     headers.append('Content-Type', 'application/json'); 
 
-    let body = {
-      message: "Do you hear me"
-    }; 
     this.http.post(url, form_object , {headers: headers})
     .map(res => res.json())
     .subscribe( data => {
       console.log(data);
     });
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
     
 
   }
