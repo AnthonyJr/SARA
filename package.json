@@ -22,6 +22,7 @@
     "@ionic-native/core": "^3.2.1",
     "@ionic-native/email-composer": "^3.2.1",
     "@ionic-native/http": "^3.2.3",
+    "@ionic-native/keyboard": "^3.4.4",
     "@ionic-native/social-sharing": "^3.2.2",
     "@ionic-native/sqlite": "^3.2.2",
     "@ionic/storage": "1.1.7",

@@ -16,7 +16,8 @@ import {Http, Headers} from '@angular/http';
 */
 @Component({
   selector: 'page-report',
-  templateUrl: 'report.html',
+  templateUrl: 'report.html'
+
 })
 export class ReportPage {
 
@@ -185,7 +186,7 @@ export class ReportPage {
     this.toggleCounseling, this.toggleRelocation];
 
     var url = "http://localhost:3030/SARAEmail"; 
-    // var url = "http://bloodroot.cs.uky.edu:3030/SARAEmail"; 
+    var url = "http://bloodroot.cs.uky.edu:3030/SARAEmail"; 
 
     var method = "POST"; 
     var async = true; 

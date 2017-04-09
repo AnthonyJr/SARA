@@ -30,21 +30,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/SnowMan/Desktop/SARA/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="873daaba9b25e7f07376989b900fc46e99a9271c">
-        <dex dex="/Users/SnowMan/Desktop/SARA/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_db515fd01348afa5c1aa4bfd4460cb1fe39920f3.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/SnowMan/Desktop/SARA/platforms/android/libs/sqlite-connector.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="76169ab23a4f939925491c6fe186749da5a56ee9">
         <dex dex="/Users/SnowMan/Desktop/SARA/platforms/android/build/intermediates/pre-dexed/debug/sqlite-connector_ff83543aafef6120fba4eba878c36e9c102f4da3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/SnowMan/Desktop/SARA/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="873daaba9b25e7f07376989b900fc46e99a9271c">
+        <dex dex="/Users/SnowMan/Desktop/SARA/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_db515fd01348afa5c1aa4bfd4460cb1fe39920f3.jar" />
     </item>
 
 </items>

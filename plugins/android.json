@@ -15,6 +15,12 @@
         },
         "cordova-plugin-http": {
             "PACKAGE_NAME": "com.ionicframework.sara306432"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.sara306432"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.sara306432"
         }
     },
     "dependent_plugins": {
