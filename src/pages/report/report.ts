@@ -155,6 +155,7 @@ export class ReportPage {
 
 
   public SubmitForm(){
+    var username = this.navParams.get('param1'); 
     var first_name = (<HTMLInputElement>document.getElementsByName("first_name")[1]).value;
     var last_name = (<HTMLInputElement>document.getElementsByName("last_name")[1]).value;
     var location = (<HTMLInputElement>document.getElementsByName("location")[1]).value;
@@ -185,7 +186,7 @@ export class ReportPage {
     // this.toggleEvidence, this.toggleMedical, 
     // this.toggleCounseling, this.toggleRelocation];
 
-    var form_object = { firstname: first_name, lastname: last_name, location: location, misc: misc, email: email, 
+    var form_object = { username: username,  firstname: first_name, lastname: last_name, location: location, misc: misc, email: email, 
       phone: phone, toggleCharged: this.toggleCharged, toggleEvidence: this.toggleEvidence, 
       toggleMedical: this.toggleMedical, toggleCounseling: this.ToggleCounsel, toggleRelocation: this.toggleRelocation}; 
 
