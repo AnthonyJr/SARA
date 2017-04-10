@@ -175,15 +175,20 @@ export class ReportPage {
     // console.log("Do you want to press Charges? " +this.YorN(this.toggleCharged));
     // console.log("Do you need Relocation? " + this.YorN(this.toggleRelocation)); 
 
-    let form_object: [string, string, string, 
-    string, string, string, 
-    boolean, boolean, boolean,
-     boolean, boolean]; 
+    // let form_object: [string, string, string, 
+    // string, string, string, 
+    // boolean, boolean, boolean,
+    //  boolean, boolean]; 
 
-    form_object = [first_name, last_name, location, 
-    misc, email, phone, this.toggleCharged, 
-    this.toggleEvidence, this.toggleMedical, 
-    this.toggleCounseling, this.toggleRelocation];
+    // form_object = [first_name, last_name, location, 
+    // misc, email, phone, this.toggleCharged, 
+    // this.toggleEvidence, this.toggleMedical, 
+    // this.toggleCounseling, this.toggleRelocation];
+
+    var form_object = { firstname: first_name, lastname: last_name, location: location, misc: misc, email: email, 
+      phone: phone, toggleCharged: this.toggleCharged, toggleEvidence: this.toggleEvidence, 
+      toggleMedical: this.toggleMedical, toggleCounseling: this.ToggleCounsel, toggleRelocation: this.toggleRelocation}; 
+
 
     var url = "http://localhost:3030/SARAEmail"; 
     var url = "http://bloodroot.cs.uky.edu:3030/SARAEmail"; 
