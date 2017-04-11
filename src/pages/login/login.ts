@@ -35,6 +35,24 @@ export class LoginPage {
     var Login = true; 
 
    var hash_username =  Md5.hashStr(username); 
+   this.navCtrl.push(ReportPage, {param1: hash_username, param2: true});
+  }
+
+  public SkipLogin(){
+    console.log("Login"); 
+    var username = (<HTMLInputElement>document.getElementsByName("username")[1]).value;
+    var password = (<HTMLInputElement>document.getElementsByName("password")[1]).value;
+    this.navCtrl.push(ReportPage, {param1: hash_username, param2: false});
+
+
+    // jsco224
+    //SARAtest
+    //password
+
+    var Login = true; 
+
+   var hash_username =  Md5.hashStr(username); 
+
    this.navCtrl.push(ReportPage, {param1: hash_username, param2: Login});
   }
 

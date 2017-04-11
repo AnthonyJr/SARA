@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import {SocialSharing } from '@ionic-native/social-sharing'; 
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map'; 
@@ -21,7 +21,7 @@ import {Http, Headers} from '@angular/http';
 })
 export class ReportPage {
 
-
+  myDate: string; 
 
   toggleCharged: boolean = false; 
   toggleEvidence: boolean = false; 
@@ -29,7 +29,7 @@ export class ReportPage {
   toggleCounseling: boolean = false; 
   toggleRelocation: boolean = false; 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,private alertCtrl: AlertController) {
 
   }
 
@@ -39,7 +39,6 @@ export class ReportPage {
   }
 
   public Show(){
-
 	var phone = document.getElementById('phone'); 
 	var email = document.getElementById('email');
 
@@ -155,7 +154,9 @@ export class ReportPage {
 
 
   public SubmitForm(){
+    var date = this.myDate;
     var username = this.navParams.get('param1'); 
+    var login = this.navParams.get('param2'); 
     var first_name = (<HTMLInputElement>document.getElementsByName("first_name")[1]).value;
     var last_name = (<HTMLInputElement>document.getElementsByName("last_name")[1]).value;
     var location = (<HTMLInputElement>document.getElementsByName("location")[1]).value;
@@ -164,47 +165,33 @@ export class ReportPage {
     var phone = (<HTMLInputElement>document.getElementsByName("phone")[1]).value;
 
 
-    // console.log("first name: " + first_name);
-    // console.log("last name: " +last_name); 
-    // console.log("Location: " + location); 
-    // console.log("Other: " + misc); 
-    // console.log("Email: " + email); 
-    // console.log("Phone: " + phone);
-    // console.log("Do you want evidence Collected? " + this.YorN(this.toggleEvidence)); 
-    // console.log("Do you want Counseling? " + this.YorN(this.toggleCounseling)); 
-    // console.log("Do you require Medical Attention " + this.YorN(this.toggleMedical)); 
-    // console.log("Do you want to press Charges? " +this.YorN(this.toggleCharged));
-    // console.log("Do you need Relocation? " + this.YorN(this.toggleRelocation)); 
 
-    // let form_object: [string, string, string, 
-    // string, string, string, 
-    // boolean, boolean, boolean,
-    //  boolean, boolean]; 
-
-    // form_object = [first_name, last_name, location, 
-    // misc, email, phone, this.toggleCharged, 
-    // this.toggleEvidence, this.toggleMedical, 
-    // this.toggleCounseling, this.toggleRelocation];
-
-    var form_object = { username: username,  firstname: first_name, lastname: last_name, location: location, misc: misc, email: email, 
+    var form_object = { login: login, date: date, username: username,  firstname: first_name, 
+      lastname: last_name, location: location, misc: misc, email: email, 
       phone: phone, toggleCharged: this.toggleCharged, toggleEvidence: this.toggleEvidence, 
-      toggleMedical: this.toggleMedical, toggleCounseling: this.ToggleCounsel, toggleRelocation: this.toggleRelocation}; 
+      toggleMedical: this.toggleMedical, toggleCounseling: this.ToggleCounsel, 
+      toggleRelocation: this.toggleRelocation}; 
+
+    if(this.toggles() == true) {
+      if(email == '' && phone == '') {
+        alert("error");  
+      } else {
+        this.POST(form_object); 
+      }
+    } else {
+      this.POST(form_object); 
+    }
 
 
-    var url = "http://localhost:3030/SARAEmail"; 
-    var url = "http://bloodroot.cs.uky.edu:3030/SARAEmail"; 
 
-    var method = "POST"; 
-    var async = true; 
 
-    let headers = new Headers(); 
-    headers.append('Content-Type', 'application/json'); 
 
-    this.http.post(url, form_object , {headers: headers})
-    .map(res => res.json())
-    .subscribe( data => {
-      console.log(data);
-    });
+
+
+
+ 
+
+
     
 
   }
@@ -215,6 +202,38 @@ export class ReportPage {
     } else {
       return "no";
     }
+  }
+
+  public toggles(){
+    if(this.toggleEvidence == true || this.toggleCounseling == true || 
+      this.toggleMedical == true || this.toggleRelocation == true || this.toggleCharged == true) {
+      return true; 
+    } else {
+      return false
+    }
+  }
+
+  public POST(x: Object){
+    var url = "http://bloodroot.cs.uky.edu:3030/SARAEmail"; 
+    var method = "POST";
+    let headers = new Headers(); 
+    headers.append('Content-Type', 'application/json'); 
+
+    this.http.post(url, x , {headers: headers})
+    .map(res => res.json())
+    .subscribe( data => {
+      console.log(data);
+    });
+
+  }
+
+  public customalert(s: string){
+    let alert = this.alertCtrl.create({
+      title: 'Warning', 
+      subTitle: s, 
+      buttons: ['Dimiss']
+    }); 
+    alert.present;
   }
 
 

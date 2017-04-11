@@ -25,23 +25,23 @@
           <ion-list inset>
             
             <ion-item style="background-color: inherit;">
-              <ion-input type="text" placeholder="Username" name="username"  required></ion-input>
+              <ion-input type="text" placeholder="Username" name="username"></ion-input>
             </ion-item>
             
             <ion-item style="background-color: inherit;">
-              <ion-input type="password" placeholder="Password" name="password" required></ion-input>
+              <ion-input type="password" placeholder="Password" name="password"></ion-input>
             </ion-item>
             
           </ion-list>
         </ion-col>
       </ion-row>
       
-      <ion-row>
-        <ion-col class="signup-col">
-      <button  (click)="Login()" ion-button full>Submit</button>
+ 
+      <button (click)="Login()" ion-button full>Login</button>
+
+      <button (click)="SkipLogin()" ion-button full color="grey">Skip Login</button>
          
-        </ion-col>
-      </ion-row>
+
       
     </form>
   </div>
