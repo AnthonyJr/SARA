@@ -22,6 +22,7 @@ import {Http, Headers} from '@angular/http';
 export class ReportPage {
 
   myDate: string; 
+  location:string;
 
   toggleCharged: boolean = false; 
   toggleEvidence: boolean = false; 
@@ -29,7 +30,7 @@ export class ReportPage {
   toggleCounseling: boolean = false; 
   toggleRelocation: boolean = false; 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private alertCtrl: AlertController) {
 
   }
 
@@ -155,44 +156,43 @@ export class ReportPage {
 
   public SubmitForm(){
     var date = this.myDate;
+    var location = this.location;
     var username = this.navParams.get('param1'); 
     var login = this.navParams.get('param2'); 
     var first_name = (<HTMLInputElement>document.getElementsByName("first_name")[1]).value;
     var last_name = (<HTMLInputElement>document.getElementsByName("last_name")[1]).value;
-    var location = (<HTMLInputElement>document.getElementsByName("location")[1]).value;
     var misc = (<HTMLInputElement>document.getElementsByName("misc")[1]).value;
     var email = (<HTMLInputElement>document.getElementsByName("email")[1]).value;
     var phone = (<HTMLInputElement>document.getElementsByName("phone")[1]).value;
 
 
 
-    var form_object = { login: login, date: date, username: username,  firstname: first_name, 
-      lastname: last_name, location: location, misc: misc, email: email, 
-      phone: phone, toggleCharged: this.toggleCharged, toggleEvidence: this.toggleEvidence, 
-      toggleMedical: this.toggleMedical, toggleCounseling: this.ToggleCounsel, 
+    var form_object = { 
+      username: username,  
+      login: login, 
+      firstname: first_name, 
+      lastname: last_name, 
+      date: date, 
+      location: location, 
+      misc: misc, 
+      email: email, 
+      phone: phone, 
+      toggleCharged: this.toggleCharged, 
+      toggleEvidence: this.toggleEvidence, 
+      toggleMedical: this.toggleMedical, 
+      toggleCounseling: this.ToggleCounsel, 
       toggleRelocation: this.toggleRelocation}; 
 
     if(this.toggles() == true) {
       if(email == '' && phone == '') {
-        alert("error");  
+        console.log("error- now email or phone # given"); 
+        this.customalert("Please give a email or phone number"); 
       } else {
         this.POST(form_object); 
       }
     } else {
       this.POST(form_object); 
-    }
-
-
-
-
-
-
-
-
- 
-
-
-    
+    } 
 
   }
 
@@ -228,12 +228,14 @@ export class ReportPage {
   }
 
   public customalert(s: string){
+    console.log("we in function)");
     let alert = this.alertCtrl.create({
-      title: 'Warning', 
+      title: 'Error', 
       subTitle: s, 
-      buttons: ['Dimiss']
-    }); 
-    alert.present;
+      buttons: ['OK']
+    });
+
+    alert.present(alert); 
   }
 
 

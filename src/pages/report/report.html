@@ -26,7 +26,10 @@
         <ion-datetime name="date" [(ngModel)]="myDate"></ion-datetime>
       </ion-item>
       <ion-item style="background-color: #FFFACD">
-        <ion-input placeholder="Location of Assault (Description)" name="location"></ion-input>
+        <ion-label>Label</ion-label>
+        <ion-select [(ngModel)]="location">
+          <ion-option value="Lexington" selected="true"> Lexington,KY</ion-option>
+        </ion-select>
       </ion-item>
     </ion-slide>
 		<ion-slide>
