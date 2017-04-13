@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import {SocialSharing } from '@ionic-native/social-sharing'; 
-import {Observable} from 'rxjs/Rx';
-import 'rxjs/add/operator/map'; 
 import {Http, Headers} from '@angular/http'; 
 
 
@@ -49,7 +47,6 @@ export class ReportPage {
 
 
 
-  //var medical = (<HTMLInputElement>document.getElementsByName("medical")[1]).value; *
   }
 
   public Hide(){
@@ -155,6 +152,8 @@ export class ReportPage {
 
 
   public SubmitForm(){
+    var spinner = document.getElementsByName('bubbles');
+
     var date = this.myDate;
     var location = this.location;
     var username = this.navParams.get('param1'); 
@@ -224,6 +223,8 @@ export class ReportPage {
     .subscribe( data => {
       console.log(data);
     });
+
+    this.customalert("Your report has been successfully submitted"); 
 
   }
 

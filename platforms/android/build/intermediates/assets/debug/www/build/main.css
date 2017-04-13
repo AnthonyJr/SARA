@@ -24398,3 +24398,7 @@ ion-navbar.toolbar {
 ion-item {
   background-color: inherit;
 }
+
+#slide {
+  opacity: .5;
+}
