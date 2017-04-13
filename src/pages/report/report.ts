@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import {SocialSharing } from '@ionic-native/social-sharing'; 
-import {Observable} from 'rxjs/Rx';
-import 'rxjs/add/operator/map'; 
 import {Http, Headers} from '@angular/http'; 
 
 
@@ -21,7 +19,8 @@ import {Http, Headers} from '@angular/http';
 })
 export class ReportPage {
 
-
+  myDate: string; 
+  location:string;
 
   toggleCharged: boolean = false; 
   toggleEvidence: boolean = false; 
@@ -29,7 +28,7 @@ export class ReportPage {
   toggleCounseling: boolean = false; 
   toggleRelocation: boolean = false; 
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, private alertCtrl: AlertController) {
 
   }
 
@@ -39,7 +38,6 @@ export class ReportPage {
   }
 
   public Show(){
-
 	var phone = document.getElementById('phone'); 
 	var email = document.getElementById('email');
 
@@ -49,7 +47,6 @@ export class ReportPage {
 
 
 
-  //var medical = (<HTMLInputElement>document.getElementsByName("medical")[1]).value; *
   }
 
   public Hide(){
@@ -155,51 +152,46 @@ export class ReportPage {
 
 
   public SubmitForm(){
+    var spinner = document.getElementsByName('bubbles');
+
+    var date = this.myDate;
+    var location = this.location;
+    var username = this.navParams.get('param1'); 
+    var login = this.navParams.get('param2'); 
     var first_name = (<HTMLInputElement>document.getElementsByName("first_name")[1]).value;
     var last_name = (<HTMLInputElement>document.getElementsByName("last_name")[1]).value;
-    var location = (<HTMLInputElement>document.getElementsByName("location")[1]).value;
     var misc = (<HTMLInputElement>document.getElementsByName("misc")[1]).value;
     var email = (<HTMLInputElement>document.getElementsByName("email")[1]).value;
     var phone = (<HTMLInputElement>document.getElementsByName("phone")[1]).value;
 
 
-    // console.log("first name: " + first_name);
-    // console.log("last name: " +last_name); 
-    // console.log("Location: " + location); 
-    // console.log("Other: " + misc); 
-    // console.log("Email: " + email); 
-    // console.log("Phone: " + phone);
-    // console.log("Do you want evidence Collected? " + this.YorN(this.toggleEvidence)); 
-    // console.log("Do you want Counseling? " + this.YorN(this.toggleCounseling)); 
-    // console.log("Do you require Medical Attention " + this.YorN(this.toggleMedical)); 
-    // console.log("Do you want to press Charges? " +this.YorN(this.toggleCharged));
-    // console.log("Do you need Relocation? " + this.YorN(this.toggleRelocation)); 
 
-    let form_object: [string, string, string, 
-    string, string, string, 
-    boolean, boolean, boolean,
-     boolean, boolean]; 
+    var form_object = { 
+      username: username,  
+      login: login, 
+      firstname: first_name, 
+      lastname: last_name, 
+      date: date, 
+      location: location, 
+      misc: misc, 
+      email: email, 
+      phone: phone, 
+      toggleCharged: this.toggleCharged, 
+      toggleEvidence: this.toggleEvidence, 
+      toggleMedical: this.toggleMedical, 
+      toggleCounseling: this.ToggleCounsel, 
+      toggleRelocation: this.toggleRelocation}; 
 
-    form_object = [first_name, last_name, location, 
-    misc, email, phone, this.toggleCharged, 
-    this.toggleEvidence, this.toggleMedical, 
-    this.toggleCounseling, this.toggleRelocation];
-
-    var url = "http://localhost:3030/SARAEmail"; 
-    var url = "http://bloodroot.cs.uky.edu:3030/SARAEmail"; 
-
-    var method = "POST"; 
-    var async = true; 
-
-    let headers = new Headers(); 
-    headers.append('Content-Type', 'application/json'); 
-
-    this.http.post(url, form_object , {headers: headers})
-    .map(res => res.json())
-    .subscribe( data => {
-      console.log(data);
-    });
-    
+    if(this.toggles() == true) {
+      if(email == '' && phone == '') {
+        console.log("error- now email or phone # given"); 
+        this.customalert("Please give a email or phone number"); 
+      } else {
+        this.POST(form_object); 
+      }
+    } else {
+      this.POST(form_object); 
+    } 
 
   }
 
@@ -209,6 +201,42 @@ export class ReportPage {
     } else {
       return "no";
     }
+  }
+
+  public toggles(){
+    if(this.toggleEvidence == true || this.toggleCounseling == true || 
+      this.toggleMedical == true || this.toggleRelocation == true || this.toggleCharged == true) {
+      return true; 
+    } else {
+      return false
+    }
+  }
+
+  public POST(x: Object){
+    var url = "http://bloodroot.cs.uky.edu:3030/SARAEmail"; 
+    var method = "POST";
+    let headers = new Headers(); 
+    headers.append('Content-Type', 'application/json'); 
+
+    this.http.post(url, x , {headers: headers})
+    .map(res => res.json())
+    .subscribe( data => {
+      console.log(data);
+    });
+
+    this.customalert("Your report has been successfully submitted"); 
+
+  }
+
+  public customalert(s: string){
+    console.log("we in function)");
+    let alert = this.alertCtrl.create({
+      title: 'Error', 
+      subTitle: s, 
+      buttons: ['OK']
+    });
+
+    alert.present(alert); 
   }
 
 
